@@ -1,0 +1,82 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(147, 227, 243);
+    background-image: url('backdrop.PNG');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: grey;
+}
+
+p {
+    border: 3px black solid;
+    background-color: snow;
+    color: black;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1.3rem;
+    margin-bottom: 1em;
+    border-radius: 16px;
+}
+
+div {
+    padding: 2rem;
+    font-size: 1.3rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
+    margin-top: 2rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+input[type="text"],
+input[type="submit"],
+input[type="reset"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    font-size: 1rem;
+    border: 2px solid #333;
+    border-radius: 8px;
+}
+
+#header {
+    height: 30%; /* Full-height: remove this if you want "auto" height */
+    width: 15%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    /* background-color: navy; */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    /* overflow-y: hidden; */
+    /* background-image: linear-gradient(to right, white, navy) ; */
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+
+    h1 {
+        /* border-bottom: 3px black solid; */
+        text-align: center;
+        font-size: 2.5em;
+        background-color: snow;
+        border: 3px black solid;
+        border-radius: 16px;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        padding-left: 2%;
+        padding-right: 2%;
+        margin-top: 5%;
+    }
+
+}
