@@ -75,6 +75,10 @@ if ($search !== '') {
                         </a>
                     </h1>
 
+                    <div>
+                        
+                    </div>
+
                     <p><?php echo htmlspecialchars($item['description']); ?></p>
                     <p>Starting Price: $<?php echo htmlspecialchars($item['starting_price']); ?></p>
                     <p>Current Price: $<?php echo htmlspecialchars($item['current_price']); ?></p>
