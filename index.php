@@ -47,22 +47,24 @@ if ($search !== '') {
 
     </div>
 
-    <main>
+    <div id="searchbar">
+            <form method="GET" action="index.php">
+                <p>
+                    Search For Items
+                    <input 
+                        type="text"
+                        name="search"
+                        size="15"
+                        maxlength="50"
+                        placeholder="Search for items"
+                        value="<?php echo htmlspecialchars($search); ?>"
+                    />
+                    <button type="submit">Search</button>
+                </p>
+            </form>
+        </div>
 
-        <form method="GET" action="index.php">
-            <p>
-                Search For Items
-                <input 
-                    type="text"
-                    name="search"
-                    size="15"
-                    maxlength="50"
-                    placeholder="Search for items"
-                    value="<?php echo htmlspecialchars($search); ?>"
-                />
-                <button type="submit">Search</button>
-            </p>
-        </form>
+    <main>
 
         <?php if (!empty($items)): ?>
             <?php foreach ($items as $item): ?>
@@ -76,12 +78,12 @@ if ($search !== '') {
                     </h1>
 
                     <div>
+                        <p><?php echo htmlspecialchars($item['description']); ?></p>
+                        <p>Starting Price: $<?php echo htmlspecialchars($item['starting_price']); ?></p>
+                        <p>Current Price: $<?php echo htmlspecialchars($item['current_price']); ?></p>
+
                         
                     </div>
-
-                    <p><?php echo htmlspecialchars($item['description']); ?></p>
-                    <p>Starting Price: $<?php echo htmlspecialchars($item['starting_price']); ?></p>
-                    <p>Current Price: $<?php echo htmlspecialchars($item['current_price']); ?></p>
 
                     <?php if (isset($_SESSION['user_id'])): ?>
 

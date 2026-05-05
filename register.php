@@ -43,10 +43,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account</title>
-        <link rel="stylesheet" href="Homepage.css">
+        <link href="register.css" rel="stylesheet">
 
 </head>
 <body>
+
+<div id="header">
+    <h1><a href="index.php">Auction-ettes</a></h1>
+</div>
+
     <div class="auth-container">
 
 <h1>Create Account</h1>
@@ -56,14 +61,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <?php endif; ?>
 
 <form method="POST">
+    <div>
     <label>Username:</label>
     <input type="text" name="username">
 
-    <label>Email:</label>
-    <input type="email" name="email">
+    </div>
 
-    <label>Password:</label>
-    <input type="password" name="password">
+    <div>
+        <label>Email:</label>
+        <input type="email" name="email">    
+    </div>
+
+    <div>
+        <label>Password:</label>
+        <input type="password" name="password">
+    </div>
 
     <button type="submit">Create Account</button>
 </form>
