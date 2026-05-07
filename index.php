@@ -47,7 +47,9 @@ if ($search !== '') {
 
     </div>
 
-    <div id="searchbar">
+    <main>
+
+      <div id="search_bar">
             <form method="GET" action="index.php">
                 <p>
                     Search For Items
@@ -64,8 +66,6 @@ if ($search !== '') {
             </form>
         </div>
 
-    <main>
-
         <?php if (!empty($items)): ?>
             <?php foreach ($items as $item): ?>
 
@@ -77,48 +77,48 @@ if ($search !== '') {
                         </a>
                     </h1>
 
-                    <div>
-                        <p><?php echo htmlspecialchars($item['description']); ?></p>
+                    <p><?php echo htmlspecialchars($item['description']); ?></p>
+
+                    <div id="nondesc">
                         <p>Starting Price: $<?php echo htmlspecialchars($item['starting_price']); ?></p>
                         <p>Current Price: $<?php echo htmlspecialchars($item['current_price']); ?></p>
-
-                        
                     </div>
 
-                    <?php if (isset($_SESSION['user_id'])): ?>
+                        <?php if (isset($_SESSION['user_id'])): ?>
 
-                        <?php 
-                            $userBid = $listing->getUserBid($item['listing_id'], $_SESSION['user_id']); 
-                        ?>
+                            <?php 
+                                $userBid = $listing->getUserBid($item['listing_id'], $_SESSION['user_id']); 
+                            ?>
 
-                        <?php if ($userBid !== null): ?>
-                            <p style="color: green;">
-                                You bid: $<?php echo htmlspecialchars($userBid); ?>
-                            </p>
+                            <?php if ($userBid !== null): ?>
+                                <p style="color: green;">
+                                    You bid: $<?php echo htmlspecialchars($userBid); ?>
+                                </p>
+                            <?php endif; ?>
+
+                            <form method="POST" action="bid.php">
+                                <input 
+                                    type="hidden" 
+                                    name="listing_id" 
+                                    value="<?php echo htmlspecialchars($item['listing_id']); ?>"
+                                >
+
+                                <input 
+                                    type="number" 
+                                    step="0.01" 
+                                    name="bid_amount" 
+                                    placeholder="Enter bid"
+                                >
+
+                                <button type="submit">Place Bid</button>
+                            </form>
+
+                        <?php else: ?>
+
+                            <p><a href="login.php">Login to place a bid</a></p>
+
                         <?php endif; ?>
 
-                        <form method="POST" action="bid.php">
-                            <input 
-                                type="hidden" 
-                                name="listing_id" 
-                                value="<?php echo htmlspecialchars($item['listing_id']); ?>"
-                            >
-
-                            <input 
-                                type="number" 
-                                step="0.01" 
-                                name="bid_amount" 
-                                placeholder="Enter bid"
-                            >
-
-                            <button type="submit">Place Bid</button>
-                        </form>
-
-                    <?php else: ?>
-
-                        <p><a href="login.php">Login to place a bid</a></p>
-
-                    <?php endif; ?>
 
                 </div>
 

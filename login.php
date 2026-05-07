@@ -40,9 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body>
 
-    <div id="left_color"></div>
-    <div id="right_color"></div>
-
     <div id="header">
         <h1><a href="index.php">Auction-ettes</a></h1>
     </div>
@@ -78,13 +75,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 />
             </p>
 
-            <button type="submit">Login</button>
+            <div id="submit">
+                <button type="submit">Login</button>
+            </div>
+
 
         </form>
 
-        <p>
+        <div id="create">
+            <p>
             <a href="register.php">Create New Account</a>
-        </p>
+            </p>
+        </div>
 
     </div>
 

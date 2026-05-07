@@ -80,3 +80,13 @@ input[type="reset"] {
     }
 
 }
+
+#submit {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    font-size: 1rem;
+    border: 2px solid #333;
+    border-radius: 8px;
+}
