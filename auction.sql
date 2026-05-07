@@ -54,7 +54,7 @@ CREATE TABLE items (
 );
 
 
--- Bids table (child of listing and user_
+-- Bids table (child of listing and user)
 CREATE TABLE bids (
     bid_id INT AUTO_INCREMENT PRIMARY KEY,
     listing_id INT NOT NULL,
@@ -145,3 +145,45 @@ VALUES
 
 (4, 5, 130.00),
 (4, 1, 140.00);
+
+
+
+-- Insert 6 new items into listing and items
+INSERT INTO listing (
+    user_id, title, description, starting_price, current_price, status,
+    image_path, created_at, updated_at, ends_at, reserve_price,
+    category_id, item_condition
+) VALUES
+(2, 'Vintage Vinyl Record Set', 'Collection of 12 classic rock vinyl records in great condition.', 55.00, 55.00, 'active',
+ NULL, NOW(), NOW(), '2026-05-12 19:00:00', NULL,
+ 8, 'used'),
+
+(3, 'Antique Pocket Watch', 'Early 1900s mechanical pocket watch, still functional.', 150.00, 150.00, 'active',
+ NULL, NOW(), NOW(), '2026-05-15 14:30:00', 200.00,
+ 2, 'used'),
+
+(4, 'Mountain Bike Helmet', 'Lightweight, durable helmet suitable for trail riding.', 35.00, 35.00, 'active',
+ NULL, NOW(), NOW(), '2026-05-08 10:00:00', NULL,
+ 5, 'new'),
+
+(1, 'Kitchen Knife Set', 'Stainless steel 8‑piece knife set with wooden block.', 45.00, 45.00, 'active',
+ NULL, NOW(), NOW(), '2026-05-11 17:00:00', NULL,
+ 4, 'new'),
+
+(5, 'Remote Control Drone', 'Beginner‑friendly drone with HD camera and stabilizer.', 80.00, 80.00, 'active',
+ NULL, NOW(), NOW(), '2026-05-09 13:00:00', NULL,
+ 1, 'new'),
+
+(3, 'Classic Fantasy Novel Bundle', 'Set of 5 hardcover fantasy novels in excellent condition.', 25.00, 25.00, 'active',
+ NULL, NOW(), NOW(), '2026-05-14 21:00:00', NULL,
+ 9, 'used');
+
+
+INSERT INTO items (listing_id, item_name, item_description, quantity)
+VALUES
+(6, 'Vinyl Record Collection', '12 assorted classic rock vinyls', 1),
+(7, 'Antique Pocket Watch', 'Mechanical watch with chain', 1),
+(8, 'Bike Helmet', 'Trail‑ready protective helmet', 1),
+(9, 'Knife Set', '8‑piece stainless steel set', 1),
+(10, 'Drone', 'HD camera drone with controller', 1),
+(11, 'Fantasy Book Set', '5 hardcover fantasy novels', 1);
